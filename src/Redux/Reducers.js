@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { combineReducers } from "redux";
 
+import { combineReducers } from "redux";
 
 const pageSize=10;
 const currentPage=1;
 
+// Page size
 const pageSizeReducer = (state=pageSize,action) => {
 console.log("state",state);
     if(action.type==="CHANGE"){
@@ -13,28 +13,18 @@ console.log("state",state);
     return state;
 }
 
+// Page number
 const pageNumReducer=(state=currentPage,action)=>{
-    switch(action.type){
-        case "PAGECHANGE":
-            return state=action.payload; 
-        case "INCREASE":
-            return state=state+1 ;
-        case "DECREASE":
-            return state=state+1 ;
-        default:
-            return state;    
+ if(action.type==="PAGECHANGE"){
+        return state=action.payload
     }
+if(action.type==="INCREASE"){
+         return state=state+1 
+    }
+if(action.type==="DECREASE"){
   
-//  if(action.type==="PAGECHANGE"){
-//         return state=action.payload
-//     }
-// if(action.type==="INCREASE"){
-//          return state=state+1 
-//     }
-// if(action.type==="DECREASE"){
-  
-//         return state=state-1 
-//     }
-//  return state;
+        return state=state-1 
+    }
+ return state;
 }
 export const Reducers=combineReducers({pageSizeReducer,pageNumReducer})

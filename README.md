@@ -73,7 +73,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 <!-- Procedure followed in this project -->
 1.Created project by using npx create-react-app
 2.Installed the packages needed for this project(axios,redux,react-redux,etc.,)
-3.Created the dependency files for the redux like store reducers.
+3.Created the dependency files for the redux like store,reducers.
 4.Imported store from local in index.js followed by imported provider from the react-redux and wrap the whole app inside the provider .Inside the provider store passed as the props to pass all the child components inside the index.js
-5.Created the table page and integrate api by using useEffect Hook.Inside the useEffect we created async await function to return promise.Axios used to convert stringified content into json.Then the array rendered in the table by using map method.
+5.Created the table page and integrate api by using useEffect Hook.Inside the useEffect we created async await function to return promise using axios.Then the array rendered in the table by using map method.
+6.The filter input filters the array by name and returs the remaining values in the table.If the input is empty,it returns whole array.else it returns filtered array depends on text we given in filter input.
+7.Pagination is controlled by page size and page number.Page size value passed to api as "currentItems" and page number value passed as "currentPage".Both values changed by dispatch and stored in redux store.Those values can be obtained in main page by using useSelector hook.
+
 

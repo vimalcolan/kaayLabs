@@ -40,9 +40,7 @@ const BeveragesList = () => {
                 <tr>
                   <th>Sl.no</th>
                   <th>Name</th>
-                  {/* <th >Tag line</th> */}
                   <th>Origin</th>
-                  {/* <th >Description</th> */}
                   <th>Alcohol by Volume</th>
                   <th>International Bitterness Unit</th>
                   <th>European Brewing Convention</th>
@@ -51,13 +49,7 @@ const BeveragesList = () => {
                   <th>Attenuation Level</th>
                   <th>Volume</th>
                   <th>Boil Volume</th>
-                  {/* <th >Mash Temperature</th> */}
                   <th>Fermentation Temperature</th>
-                  {/* <th >Ingredients</th> */}
-                  {/* <th >Hops</th> */}
-
-                  {/* <th >Food Pairing</th> */}
-                  {/* <th >Brewer Tips</th> */}
                 </tr>
               </thead>
               <tbody>
@@ -79,9 +71,7 @@ const BeveragesList = () => {
                         <tr key={index}>
                           <td>{data.id}</td>
                           <td className="name">{data.name}</td>
-                          {/* <td>{data.tagline}</td> */}
                           <td>{data.first_brewed}</td>
-                          {/* <td>{data.description}</td> */}
                           <td>{(data.abv===""||data.abv===null)?"-":(data.abv)}</td>
                           <td>{(data.ibu===""||data.ibu===null)?"-":(data.ibu)}</td>
                           <td>{(data.ebc===""||data.ebc===null)?"-":(data.ebc)}</td>
@@ -94,16 +84,10 @@ const BeveragesList = () => {
                           <td>
                             {data.boil_volume.value} {data.boil_volume.unit}
                           </td>
-                          {/* <td>{data.method.mash_temp.map((e)=>e.temp.value)}</td> */}
                           <td>
                             {data.method.fermentation.temp.value}{" "}
                             {data.method.fermentation.temp.unit}
                           </td>
-                          {/* <td>{data.ingredients.malt.map(e=>e.name)}</td> */}
-                          {/* <td>{data.ingredients.hops.map(e=>e.name)}</td> */}
-
-                          {/* <td>{data.food_pairing.map(e=>e)}</td> */}
-                          {/* <td>{data.brewers_tips}</td> */}
                         </tr>
                       );
                     })

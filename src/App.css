@@ -155,10 +155,7 @@ color: #000;
     opacity: .7;
   }
 
-  .page-size span{
-    color: #000;
-   font-weight: 600;
-  }
+
   .pagination-sec .custom-select{
     border: 1px solid #2F3032;
     border-radius: 5px;
@@ -177,12 +174,6 @@ margin: 0 5px;
     background: transparent;
     width: 100%;
     color: #000;
-  }
-  .pagination-sec .custom-select img{
-    position: absolute;
-    top: 8px;
-      pointer-events: none;
-      right: 5px;
   }
 /* table */
 table thead tr{

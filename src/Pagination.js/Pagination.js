@@ -1,29 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
 
 const Pagination = () => {
   const dispatch = useDispatch();
   const currentItems = useSelector((state) => state.pageSizeReducer);
   const currentPage = useSelector((state) => state.pageNumReducer);
-  const [beveragesListTotal, setBeveragesListTotal] = useState([]);
-  useEffect(() => {
-    const fetchAPI = async () => {
-      await axios
-        .get(`https://api.punkapi.com/v2/beers`)
-        .then((res) => setBeveragesListTotal(res.data));
-    };
-    fetchAPI();
-  }, []);
-
+ 
   const pages = [];
-  for (let i = 1;i <= Math.ceil(320 / currentItems);i++
+  for (let i = 1;i <= Math.ceil(100 / currentItems);i++
   ) {
     pages.push(i);
   }
-  const pageLimit = 3;
-  const [maxPageNumberLimit, setMaxNumberLimit] = useState(3);
-  const [minPageNumberLimit, setMinNumberLimit] = useState(1);
+  const maxPageNumberLimit= 3;
+  const minPageNumberLimit = 1;
 
   return (
     <>
